@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-9&sxcfdyka%xm3xzjzi_w%-w(sb@5*v+c-y+d^@7x@lgu-^o!q
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*.onrender.com', 'api.starflix.com']
+ALLOWED_HOSTS = ['.onrender.com', 'starflix-backend.onrender.com', 'api.starflix.com']
 
 
 # Application definition
@@ -55,7 +55,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 ROOT_URLCONF = 'starflix_backend.urls'
 
 
@@ -131,10 +130,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 import os
-STATIC_URL = 'static/'
+
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
